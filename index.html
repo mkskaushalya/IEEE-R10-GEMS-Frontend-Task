@@ -6,16 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untitled UI</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="img/faviconlarge.png" rel="apple-touch-icon"/>
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="navbar">
             <div class="brand">
-                <img src="logo.png" alt="Untitled UI Logo">
-                <span></span>
+                <img src="img/logo.png" alt="Untitled UI Logo">
+                <span>Untitled UI</span>
             </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.08926 3.16074C1.76382 2.83531 1.23618 2.83531 0.910744 3.16074C0.585307 3.48618 0.585307 4.01382 0.910744 4.33926L2.08926 3.16074ZM6 8.25L5.41074 8.83926C5.73618 9.16469 6.26382 9.16469 6.58926 8.83926L6 8.25ZM11.0893 4.33926C11.4147 4.01382 11.4147 3.48618 11.0893 3.16074C10.7638 2.83531 10.2362 2.83531 9.91074 3.16074L11.0893 4.33926ZM0.910744 4.33926L5.41074 8.83926L6.58926 7.66074L2.08926 3.16074L0.910744 4.33926ZM6.58926 8.83926L11.0893 4.33926L9.91074 3.16074L5.41074 7.66074L6.58926 8.83926Z"/></svg></a>
+                    <div class="hoverbox">
+                        <ul>
+                            <a href="#"><li>Product 1</li></a>
+                            <a href="#"><li>Product 2</li></a>
+                            <a href="#"><li>Product 3</li></a>
+                            <a href="#"><li>Product 4</li></a>
+                            <a href="#"><li>Product 5</li></a>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Resources <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.08926 3.16074C1.76382 2.83531 1.23618 2.83531 0.910744 3.16074C0.585307 3.48618 0.585307 4.01382 0.910744 4.33926L2.08926 3.16074ZM6 8.25L5.41074 8.83926C5.73618 9.16469 6.26382 9.16469 6.58926 8.83926L6 8.25ZM11.0893 4.33926C11.4147 4.01382 11.4147 3.48618 11.0893 3.16074C10.7638 2.83531 10.2362 2.83531 9.91074 3.16074L11.0893 4.33926ZM0.910744 4.33926L5.41074 8.83926L6.58926 7.66074L2.08926 3.16074L0.910744 4.33926ZM6.58926 8.83926L11.0893 4.33926L9.91074 3.16074L5.41074 7.66074L6.58926 8.83926Z"/></svg></a>
+                    <div class="hoverbox">
+                        <ul>
+                            <a href="#"><li>Resources 1</li></a>
+                            <a href="#"><li>Resources 2</li></a>
+                            <a href="#"><li>Resources 3</li></a>
+                            <a href="#"><li>Resources 4</li></a>
+                            <a href="#"><li>Resources 5</li></a>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
         </nav>
     </header>
+    <main id="root">
+        <section id="hero">
+            <div class="cont">
+                <div class="left">
+                    <img src="img/bg.webp" alt="Hero Background">
+                </div>
+                <div class="right">
+                    <form action="">
+                        <h2>Let's level up your brand, together</h2>
+                        <label>You can reach us anytime via hi@untitledui.com</label>
+
+                        <div class="continputs">
+                            <div class="fields">
+                                <label for="name">Name</label>
+                                <input type="text" placeholder="Your name" id="name" name="name">
+                            </div>
+                            <div class="fields">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="you@company.com" id="email" name="email">
+                            </div>
+                            <div class="fields">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" placeholder="+1(555) 000-0000" id="phone" name="phone">
+                            </div>
+                            <div class="fields">
+                                <label for="description">How can we help?</label>
+                                <textarea name="description" id="description" cols="30" rows="10" placeholder="Tell us a little about the project..."></textarea>
+                            </div>
+                            <div class="fields">
+                                <label>Services</label>
+                                <div class="checkboxes">
+                                    <div class="row"><input type="checkbox" name="services" id="web" value="Website design"><label for="web">Website design</label></div>
+                                    <div class="row"><input type="checkbox" name="services" id="cc" value="Content creation"><label for="cc"></label>Content creation</div>
+                                    <div class="row"><input type="checkbox" name="services" id="ux" value="UX design"><label for="ux">UX design</label></div>
+                                    <div class="row"><input type="checkbox" name="services" id="sc" value="Strategy & Consulting"><label for="sc">Strategy & Consulting</label></div>
+                                    <div class="row"><input type="checkbox" name="services" id="ur" value="User research"><label for="ur">User research</label></div>
+                                    <div class="row"><input type="checkbox" name="services" id="other" value="Other"><label for="other">Other</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 <script src="js/script.js"></script>
 </html>
