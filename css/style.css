@@ -44,23 +44,25 @@ header{
     box-shadow: 0 0 6px -2px #0004;
     z-index: 999;
     background-color: #fff;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
 
 }
 header, header nav{
     width: 100%;
     height: 80px;
-}
-header.scroll-header{
-    background-color: #fffb;
+    background-color: #fff;
 
 }
+/* header.scroll-header{
+
+} */
 
 header nav{
     position: relative;
     display: flex;
     align-items: center;
     column-gap: 50px;
+    z-index: 1000;
 }
 header nav .brand{
     display: flex;
@@ -80,6 +82,7 @@ header nav ul{
     display: flex;
     align-items: center;
     column-gap: 25px;
+    z-index: 998;
 }
 header nav ul li{
     position: relative;
@@ -106,16 +109,20 @@ header nav ul li .hoverbox{
     top: 100%;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 8px -4px #0004;
-    background-color: #fff9;
-    backdrop-filter: blur(3px);
+    background-color: #fff;
+    backdrop-filter: blur(5px);
     height: 0px;
     opacity: 0;
     padding: 0px 10px;
+    z-index: 1000;
     overflow: hidden;
     transition: all ease-in-out 0.3s;
 
 }
+header.scroll-header nav ul li .hoverbox{
+    background-color: #fffa;
 
+}
 header nav ul li.active .hoverbox{
     padding: 10px;
     height: 150px;
@@ -130,7 +137,21 @@ header nav ul li .hoverbox ul li{
     width: 250px;
 }
 
-
+#navactive{
+    z-index: 800;
+    width: 100%;
+    background-color: #0001;
+    position: fixed;
+    backdrop-filter: blur(2px);
+    bottom: 0;
+    height: 0px;
+    left: 0;
+    /* display: none; */
+}
+#navactive.active{
+    height: calc(100vh - 80px);
+    display: flex;
+}
 
 /* Hamburger */
 .hamburger{
@@ -289,17 +310,7 @@ main#root{
     color: var(--main-color);
 }
 
-#navactive{
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: #0005;
-    position: fixed;
-    backdrop-filter: blur(5px);
-    top: 80px;
-    display: none;
-    left: 0;
-    
-}
+
 /* ====================== */
 /* Footer */
 /* ====================== */
@@ -428,6 +439,10 @@ footer .main-foot .right{
         height: 150px;
         opacity: 1;
     }
+    header:hover + #navactive{
+        height: calc(100vh - 80px);
+        display: flex;
+    }
     
 }
 @media screen and (min-width:1500px) {
@@ -487,8 +502,10 @@ footer .main-foot .right{
     #menubar{
         transition: var(--transition);
         position: absolute;
-        background-color: #fffd;
+        background-color: #fff;
+        backdrop-filter: blur(5px);
         width: 100%;
+        height: 0px;
         top: 150%;
         overflow: hidden;
         flex-direction: column;
@@ -503,8 +520,112 @@ footer .main-foot .right{
         transition: var(--transition);
         top: 100%;
         opacity: 1;
+        height: auto;
+
 
     }
+
+    header nav .brand h1{
+        font-size: 1.3rem;
+    }
+    header nav ul li a{
+        font-size: 1rem;
+    }
+    #hero .cont .right form{
+        row-gap: 10px;
+    }
+    #hero .cont .right form h2{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .continputs{
+        row-gap: 10px;
+    }
+    .continputs .fields>label{
+        font-size: 1rem;
+    }
+    .continputs .fields > input, .continputs .fields > textarea{
+        min-height: 30px;
+        line-height: 20px;
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    .continputs .fields > .checkboxes{
+        flex-direction: column;
+        padding-top: 5px;
+        row-gap: 10px;
+    }
+    .continputs .fields > .checkboxes .row{
+        min-width: 100%;
+    }
+    .continputs .fields > .checkboxes > .row label{
+        min-height: 20px;
+        font-size: 1rem;
+    }
+    .continputs .fields > .checkboxes > .row input{
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+    .continputs .fields > button{
+        height: 50px;
+        font-size: 1rem;
+    }
+    footer .main-foot .left .brand span{
+        font-size: 1.3rem;
+    }
+    footer .main-foot .left .desc p{
+        font-size: 0.9rem;
+    }
+    .footlist h3 a{
+        font-size: 0.8rem;
+    }
+    .footlist{
+        row-gap: 5px;
+    }
+    .footlist ul{
+        row-gap: 5px;
+    }
+    footer .main-foot {
+        padding: 35px var(--mp);
+
+    }
+    footer .main-foot .right{
+        row-gap: 15px;
+
+    }
+    .footlist ul li a, .footlist ul li{
+        font-size: 0.9rem;
+        height: 20px;
+    }
+
+    .bottom-foot{
+        flex-direction: column-reverse;
+        padding: 25px var(--mp);
+        row-gap: 10px;
+    }
+    .bottom-foot .copy span{
+        font-size: 0.8rem;
+    }
+    .bottom-foot .social{
+        column-gap: 15px;
+    }
+    .bottom-foot .social a{
+        height: 20px;
+    }
+    .bottom-foot .social a svg{
+        height: 20px;
+    }
+    .bottom-foot .social a:hover svg{
+        height: 20px;
+    }
+    /* header.scroll-header nav ul{
+        background-color: #fff;
+        backdrop-filter: blur(5px);
+    
+    } */
     header nav ul li a, header nav ul li{
         height: auto;
         width: 100%;
