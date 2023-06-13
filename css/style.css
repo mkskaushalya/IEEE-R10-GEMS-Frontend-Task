@@ -39,18 +39,25 @@
 /* ====================== */
 /* navbar */
 header{
+    position: fixed;
     padding: var(--nav-padding);
     box-shadow: 0 0 6px -2px #0004;
     z-index: 999;
+    background-color: #fff;
+    backdrop-filter: blur(5px);
 
 }
 header, header nav{
     width: 100%;
     height: 80px;
-    position: relative;
+}
+header.scroll-header{
+    background-color: #fffb;
+
 }
 
 header nav{
+    position: relative;
     display: flex;
     align-items: center;
     column-gap: 50px;
@@ -109,7 +116,7 @@ header nav ul li .hoverbox{
 
 }
 
-header nav ul li:hover .hoverbox{
+header nav ul li.active .hoverbox{
     padding: 10px;
     height: 150px;
     opacity: 1;
@@ -146,6 +153,7 @@ header nav ul li .hoverbox ul li{
 /* ====================== */
 main#root{
     width: 100%;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -281,7 +289,17 @@ main#root{
     color: var(--main-color);
 }
 
-
+#navactive{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #0005;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    top: 80px;
+    display: none;
+    left: 0;
+    
+}
 /* ====================== */
 /* Footer */
 /* ====================== */
@@ -404,6 +422,14 @@ footer .main-foot .right{
 /* ====================== */
 /* Media Query */
 /* ====================== */
+@media screen and (min-width:768px) {
+    header nav ul li:hover .hoverbox{
+        padding: 10px;
+        height: 150px;
+        opacity: 1;
+    }
+    
+}
 @media screen and (min-width:1500px) {
     #hero .cont>div{
         width: auto;
