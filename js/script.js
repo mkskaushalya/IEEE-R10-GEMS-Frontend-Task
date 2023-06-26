@@ -76,3 +76,86 @@ navlinks.forEach(navlink => {
         }
     })
 })
+
+
+
+// ========================================
+// ================ Form ==================
+const form = document.getElementById("form");
+const formalert = document.getElementById("formalert");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    var services=[], name, email, phone, description;
+    name = document.getElementsByName('name')[0];
+    email = document.getElementsByName('email')[0];
+    phone = document.getElementsByName('phone')[0];
+    description = document.getElementsByName('description')[0];
+    services[0] = document.getElementsByName('services')[0];
+    services[1] = document.getElementsByName('services')[1];
+    services[2] = document.getElementsByName('services')[2];
+    services[3] = document.getElementsByName('services')[3];
+    services[4] = document.getElementsByName('services')[4];
+    services[5] = document.getElementsByName('services')[5];
+    console.log(email);
+
+
+    if(name.value == ""){
+        formalert.innerText = "Name field is empty.";
+        if(formalert.classList.contains("success")){
+            formalert.classList.remove('success');
+        }
+        if(!formalert.classList.contains("error")){
+            formalert.classList.add('error');
+        }
+    }else if(email.value == ""){
+        formalert.innerText = "E-mail field is empty.";
+        if(formalert.classList.contains("success")){
+            formalert.classList.remove('success');
+        }
+        if(!formalert.classList.contains("error")){
+            formalert.classList.add('error');
+        }
+    }else if(phone.value == ""){
+        formalert.innerText = "Phone Number field is empty.";
+        if(formalert.classList.contains("success")){
+            formalert.classList.remove('success');
+        }
+        if(!formalert.classList.contains("error")){
+            formalert.classList.add('error');
+        }
+    }else if(description.value == ""){
+        formalert.innerText = "Description field is empty.";
+        if(formalert.classList.contains("success")){
+            formalert.classList.remove('success');
+        }
+        if(!formalert.classList.contains("error")){
+            formalert.classList.add('error');
+        }
+    }else{
+        formalert.innerText = "You can reach us anytime via hi@untitledui.com";
+        if(formalert.classList.contains("error")){
+            formalert.classList.remove('error');
+        }
+        if(formalert.classList.contains("success")){
+            formalert.classList.remove('success');
+        }
+
+        let NAME, EMAIL, PHONE, DESCRIPTION, SERVICES=[], DATA={};
+
+        NAME = name.value;
+        EMAIL = email.value;
+        PHONE = phone.value;
+        DESCRIPTION = description.value;
+        services.forEach(element => {
+            if(element.checked){
+                SERVICES.push(element.value);
+            }
+        });
+        // console.log(SERVICES);
+        DATA = {"name":NAME, "email":EMAIL, "phone":PHONE, "description":DESCRIPTION, "services":SERVICES}
+        console.log(DATA);
+    }
+
+})
+
+// ========================================
