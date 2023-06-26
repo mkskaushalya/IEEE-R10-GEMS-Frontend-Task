@@ -7,6 +7,7 @@
 /* Colors */
 :root{
     --main-color:#475467;
+    --second-color:#603db7;
     --footer-bg: #f4f7fc;
     --input-border: #47546788;
     --white: #ffffff;
@@ -96,9 +97,15 @@ header nav ul li a{
     align-items: center;
     column-gap: 5px;
 }
+header nav > ul li  a:hover{
+    color: var(--second-color);
+}
 
 header nav ul li a svg{
     fill: var(--main-color);
+}
+header nav ul li a:hover svg{
+    fill: var(--second-color);
 }
 
 
@@ -107,34 +114,44 @@ header nav ul li .hoverbox{
     position: absolute;
     left: 0;
     top: 100%;
+    width: 250px;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 8px -4px #0004;
     background-color: #fff;
     backdrop-filter: blur(5px);
     height: 0px;
     opacity: 0;
-    padding: 0px 10px;
     z-index: 1000;
     overflow: hidden;
-    transition: all ease-in-out 0.3s;
 
 }
 header.scroll-header nav ul li .hoverbox{
     background-color: #fffa;
-
+    padding: 0;
+    width: 100%;
 }
 header nav ul li.active .hoverbox{
-    padding: 10px;
-    height: 150px;
+    height: 140px;
     opacity: 1;
+    padding: 0;
 }
 header nav ul li .hoverbox ul{
     display: flex;
     flex-direction: column;
+    padding: 0;
+    height: auto
 }
-header nav ul li .hoverbox ul li{
+header nav ul li .hoverbox ul a li{
+    transition: background ease-in-out 0.6s;
+    width: 100%;
+    padding: 0 10px;
     height: 35px;
+    line-height: 35px;
     width: 250px;
+}
+header nav ul li .hoverbox ul a:hover{
+    background-color: var(--second-color);
+    color: #fff;
 }
 
 #navactive{
@@ -235,7 +252,26 @@ main#root{
     line-height: 4rem;
     font-weight: 500;
 }
-
+.form-alert{
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    padding: 10px;
+    min-height: 50px;
+    line-height: 30px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.form-alert.error{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.form-alert.success{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
 .continputs{
     display: flex;
     flex-direction: column;
@@ -250,6 +286,9 @@ main#root{
     color: var(--main-color);
     font-weight: 500;
     font-size: 1.1rem;
+}
+.continputs .fields>label span{
+    color: red;
 }
 .continputs .fields > input, .continputs .fields > textarea{
     min-width: 100%;
@@ -306,8 +345,8 @@ main#root{
     transition: var(--transition);
 }
 .continputs .fields > button:hover{
-    background-color: var(--white);
-    color: var(--main-color);
+    border: 3px solid var(--second-color);
+    background-color: var(--second-color);
 }
 
 
@@ -401,6 +440,9 @@ footer .main-foot .right{
     line-height: 25px;
     border-radius: 12px;
 }
+.footlist ul li a:hover{
+    text-decoration: underline;
+}
 
 .bottom-foot{
     display: flex;
@@ -435,8 +477,7 @@ footer .main-foot .right{
 /* ====================== */
 @media screen and (min-width:768px) {
     header nav ul li:hover .hoverbox{
-        padding: 10px;
-        height: 150px;
+        height: 140px;
         opacity: 1;
     }
     header:hover + #navactive{
